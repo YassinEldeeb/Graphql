@@ -1,5 +1,5 @@
 import { GraphQLList, GraphQLInt } from 'graphql'
-import BlogType from '../../schemas/blogType'
+import BlogType from '../../typeDefs/blogType'
 import Blog from '../../models/blog'
 
 const blogs = {

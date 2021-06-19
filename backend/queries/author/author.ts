@@ -1,5 +1,5 @@
 import { GraphQLID } from 'graphql'
-import AuthorType from '../../schemas/authorType'
+import AuthorType from '../../typeDefs/authorType'
 import Author from '../../models/author'
 
 const author = {

@@ -1,4 +1,4 @@
-import BlogType from '../../schemas/blogType'
+import BlogType from '../../typeDefs/blogType'
 import { GraphQLID } from 'graphql'
 import Blog from '../../models/blog'
 
