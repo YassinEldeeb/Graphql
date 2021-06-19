@@ -11,15 +11,18 @@ connectDB()
 const runServer = async () => {
   const server = new ApolloServer({
     schema,
-    context: {
-      authorLoader,
-      blogLoader,
-      reqres: ({ req, res }: any) => ({ req, res }),
+    context: ({ req, res }: any) => {
+      return {
+        authorLoader,
+        blogLoader,
+        reqRes: { req, res },
+      }
     },
   })
   await server.start()
 
   const app: any = express()
+
   server.applyMiddleware({ app })
 
   const port = process.env.PORT

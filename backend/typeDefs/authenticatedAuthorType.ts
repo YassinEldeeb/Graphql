@@ -7,7 +7,7 @@ import {
 import BlogType from './blogType'
 
 const AuthorType: GraphQLObjectType = new GraphQLObjectType({
-  name: 'Author',
+  name: 'AuthenticatedAuthor',
   fields: () => ({
     _id: { type: GraphQLID },
     name: { type: GraphQLString },
@@ -18,6 +18,7 @@ const AuthorType: GraphQLObjectType = new GraphQLObjectType({
         return blogLoader.load(_id)
       },
     },
+    token: { type: GraphQLString },
     createdAt: { type: GraphQLString },
     updatedAt: { type: GraphQLString },
   }),

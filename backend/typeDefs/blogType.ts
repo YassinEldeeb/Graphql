@@ -9,7 +9,7 @@ import AuthorType from './authorType'
 const BlogType = new GraphQLObjectType({
   name: 'Blog',
   fields: () => ({
-    id: { type: GraphQLID },
+    _id: { type: GraphQLID },
     title: { type: GraphQLString },
     tags: { type: new GraphQLList(GraphQLString) },
     body: { type: GraphQLString },
@@ -20,6 +20,8 @@ const BlogType = new GraphQLObjectType({
         return authorLoader.load(author)
       },
     },
+    createdAt: { type: GraphQLString },
+    updatedAt: { type: GraphQLString },
   }),
 })
 

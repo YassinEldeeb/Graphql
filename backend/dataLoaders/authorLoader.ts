@@ -1,7 +1,7 @@
 import DataLoader from 'dataloader'
 import Author from '../models/author'
 
-const authorLoader = new DataLoader(async (keys) => {
+const authorLoader = new DataLoader(async (keys: any) => {
   const authors = await Author.find({ _id: { $in: keys } })
 
   const authorMap: any = {}

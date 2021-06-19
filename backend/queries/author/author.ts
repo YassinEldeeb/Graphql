@@ -4,10 +4,10 @@ import Author from '../../models/author'
 
 const author = {
   type: AuthorType,
-  args: { id: { type: GraphQLID } },
-  async resolve(parent: any, { id }: any) {
+  args: { _id: { type: GraphQLID } },
+  async resolve(parent: any, { _id }: any) {
     // Get Author from Mongo
-    const author = await Author.findById(id)
+    const author = await Author.findById(_id)
     return author
   },
 }

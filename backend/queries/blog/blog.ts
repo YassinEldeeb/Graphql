@@ -4,10 +4,10 @@ import Blog from '../../models/blog'
 
 const blog = {
   type: BlogType,
-  args: { id: { type: GraphQLID } },
-  async resolve(parent: any, { id }: any) {
+  args: { _id: { type: GraphQLID } },
+  async resolve(parent: any, { _id }: any) {
     // Get Blog from Mongo
-    const blog = await Blog.findById(id)
+    const blog = await Blog.findById(_id)
     return blog
   },
 }
